@@ -1,13 +1,15 @@
-{ stdenv, lib, fetchurl, undmg }:
+{ stdenv, lib, fetchurl, undmg
+, version ? "90.0.2"
+}:
 stdenv.mkDerivation rec {
+  inherit version;
+
   name = "firefox-app-${version}";
 
   pname = "Firefox";
 
-  version = "latest";
-
   # To update run:
-  # nix-prefetch-url --name 'firefox-app-latest.dmg' 'https://download.mozilla.org/?product=firefox-latest&os=osx&lang=en-US'
+  # nix-prefetch-url --name 'firefox-app-<version>.dmg' 'https://download.mozilla.org/?product=firefox-latest&os=osx&lang=en-US'
   src = let
     versions = {
       "86.0" = {
@@ -44,11 +46,11 @@ stdenv.mkDerivation rec {
         sha256 = "00yxk43pa2f7s565b4g6cs0nv5wr023xmw1ajq45ksacp2kzp93k";
       };
     };
-    latest = versions."90.0.2";
+    hash = versions."${version}";
   in fetchurl {
-    inherit (latest) sha256;
+    inherit (hash) sha256;
     url =
-      "https://download.mozilla.org/?product=firefox-latest&os=osx&lang=en-US";
+      "https://download-installer.cdn.mozilla.net/pub/firefox/releases/${version}/mac/en-US/Firefox%20${version}.dmg";
     name = "${name}.dmg";
   };
 
