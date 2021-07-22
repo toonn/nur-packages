@@ -14,5 +14,7 @@
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
-  firefox = pkgs.callPackage ./pkgs/darwin/apps/firefox { };
+  apps = {
+    firefox = pkgs.callPackage ./pkgs/darwin/apps/firefox {};
+  };
 }
