@@ -1,4 +1,8 @@
-{ buildGoModule, fetchFromGitHub, lib }:
+{ buildGoModule
+, fetchFromGitHub
+, gnupg
+, lib
+}:
 
 buildGoModule rec {
   pname = "sotp";
@@ -13,14 +17,21 @@ buildGoModule rec {
 
   vendorHash = "sha256-78dS9GPuQ7HdDufql8QYxbRm6sgajd5kGiaKW6x7lTI=";
 
-  # Tests require a PGP key that is not public.
-  doCheck = false;
+  nativeCheckInputs = [ gnupg ];
+
+  # The tests assume the GPG key is already available in the keyring.
+  preCheck = ''
+    mkdir --mode=700 gnupghome-sotp-test
+    export GNUPGHOME=gnupghome-sotp-test
+    gpg --import sops_functional_tests_key.asc
+  '';
 
   meta = with lib; {
     description = "Small utility to store AWS TOTP secrets into Sops encrypted"
                 + "files and generate OTP on the command line";
     homepage = "https://github.com/getsops/sotp";
     license = with licenses; unfree;
+    mainProgram = "sotp";
     maintainers = with maintainers; [ toonn ];
   };
 }
