@@ -315,9 +315,6 @@ let inherit (builtins) attrNames compareVersions mapAttrs;
              "115.2.0esr" = {
                sha256 = "0qcbjqqppgw547xcawdcddbg1jl7si327av6xlniqf4dhmq48yq2";
              };
-             "115.10.0esr" = {
-               sha256 = "0qcbjqqppgw547xcawdcddbg1jl7si327av6xlniqf4dhmq48yq2";
-             };
              "115.2.1esr" = {
                sha256 = "0n71wgs29jqvm9jwn03wcp0m098jy2h2svjiavyplp3661ksrb3f";
              };
@@ -342,14 +339,14 @@ let inherit (builtins) attrNames compareVersions mapAttrs;
              "115.8.0esr" = {
                sha256 = "1qvhl6vj15x4jf3gadipw59vxncn8bjrilhvn4879f30x12cznky";
              };
-             "115.10.0esr" = {
-               sha256 = "1325r5fym8j8bcq9n44mdh4zjp7yrrxzzx0kghq3fvsg3w4w4iii";
-             };
              "115.9.0esr" = {
                sha256 = "0l8s69a6jrf6f8qlby36hdl1qa5l1hnxrbx71dgzsxl781b19cmb";
              };
              "115.9.1esr" = {
                sha256 = "1pm3j1180qlscrsz0042f5gnrsmw9rsg2gzsx3b0p9gvv4lnvda4";
+             };
+             "115.10.0esr" = {
+               sha256 = "1325r5fym8j8bcq9n44mdh4zjp7yrrxzzx0kghq3fvsg3w4w4iii";
              };
            };
          };
