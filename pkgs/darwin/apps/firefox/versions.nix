@@ -307,6 +307,27 @@ let inherit (builtins) attrNames compareVersions mapAttrs;
       "124.0.2" = {
         sha256 = "0dhx2mdiw6y79bdhh6sshjj0w8xbn5m16s5gs0b1g5ggd69qjv7l";
       };
+      "125.0.1" = {
+        sha256 = "1wxcsggbpdmnihs277r14qj2a5w2jiihl4m4hxwkkr93siwi0hrz";
+      };
+      "125.0.2" = {
+        sha256 = "0md33zvzj2i7jidjs0ygjj6zyd7jdp6w4jp09vkjnim01xkrwpx2";
+      };
+      "125.0.3" = {
+        sha256 = "185hl9561bwjs4c46rwx8ql4cfzfy0ggzwi6j2vv9wm0mcx91c59";
+      };
+      "126.0" = {
+        sha256 = "11cnb0vh44085hhlyfn6ag8mi5bx7g8cbbaayfig7sfl96yngpvz";
+      };
+      "126.0.1" = {
+        sha256 = "1vkl7r6wgaj0ra7h4ihkm895xnhgcnyngacm0sj2x9c4yvd3vx2k";
+      };
+      "127.0" = {
+        sha256 = "0vbfzrgsx4v1r1jb8xi85k56c25xf746d8ijmi2drl1amv4cnc1w";
+      };
+      "127.0.1" = {
+        sha256 = "0gaclpqlnx61jl5ml6ym9wr6wviw323nawhvq33b0b2vx7pkcvmj";
+      };
     } // { esr = addVersion {
              # Security updates until September 2024
              "115.1.0esr" = {
@@ -347,6 +368,12 @@ let inherit (builtins) attrNames compareVersions mapAttrs;
              };
              "115.10.0esr" = {
                sha256 = "1325r5fym8j8bcq9n44mdh4zjp7yrrxzzx0kghq3fvsg3w4w4iii";
+             };
+             "115.11.0esr" = {
+               sha256 = "0v61azvx3qrbzyf7br3xkkkx35rfd99dvlkxzrdbbaq4vzi8g7g6";
+             };
+             "115.12.0esr" = {
+               sha256 = "04jw5fm1c89pfa8xscaz4xvq94ybnbipdaqzczgcmg38zikcrgxg";
              };
            };
          };
